@@ -1,0 +1,20 @@
+trigger:
+  branches:
+    include:
+      - master
+
+stages:
+  - stage: Initialize
+    displayName: 'Initialize Terraform'
+    jobs:
+      - job: Install
+        displayName: 'Install ADO-TF'
+        pool: 
+          vmImage: 'ubuntu-18.04'
+        steps:
+          - bash: |
+              "
+                echo 'Hello World!'
+              "
+            displayName: "Get ADO-TF Release"
+          - bash: |
